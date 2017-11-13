@@ -13,8 +13,7 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir -p /app
 WORKDIR /app
 COPY ./app /app
-RUN npm install karma \
-	npm install 
+RUN npm install 
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN dpkg --install google-chrome-stable_current_amd64.deb; \
         apt-get install --fix-broken --yes
@@ -32,4 +31,4 @@ EXPOSE 9876
 # Autorun chrome headless with no GPU
 # ENTRYPOINT [ "google-chrome-stable" ]
 #CMD [ "--headless", "--no-sandbox", "--user-data-dir /root", "--disable-gpu", "--remote-debugging-address=0.0.0.0", "--remote-debugging-port=9222" ]
-CMD [karma start karma start --browsers ChromeHeadlessNoSandbox]
+CMD [karma start --browsers ChromeHeadlessNoSandbox]
