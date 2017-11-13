@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
         git \
         wget \
 		npm \
-RUN npm install -g karma
+RUN npm install karma
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN dpkg --install google-chrome-stable_current_amd64.deb; \
         apt-get install --fix-broken --yes
