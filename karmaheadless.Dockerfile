@@ -32,4 +32,4 @@ EXPOSE 9876
 # ENTRYPOINT [ "google-chrome-stable" ]
 #CMD [ "--headless", "--no-sandbox", "--user-data-dir /root", "--disable-gpu", "--remote-debugging-address=0.0.0.0", "--remote-debugging-port=9222" ]
 
-CMD ["karma start --browsers ChromeHeadlessNoSandbox"]
+CMD ["npm test"]
