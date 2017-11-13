@@ -7,7 +7,9 @@ RUN apt-get update && apt-get install -y \
         gnupg \
         nano \
         git \
-        wget
+        wget \
+		npm \
+RUN npm install -g karma
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN dpkg --install google-chrome-stable_current_amd64.deb; \
         apt-get install --fix-broken --yes
@@ -16,7 +18,7 @@ RUN groupadd -r chrome && useradd -r -g chrome -G audio,video chrome \
     && mkdir -p /home/chrome && chown -R chrome:chrome /home/chrome
 
 # Run Chrome non-privileged
-USER chrome
+# USER chrome
 
 # Expose port 9222
 EXPOSE 9222
