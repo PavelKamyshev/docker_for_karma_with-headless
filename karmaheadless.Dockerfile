@@ -18,7 +18,7 @@ RUN groupadd -r chrome && useradd -r -g chrome -G audio,video chrome \
     && mkdir -p /home/chrome && chown -R chrome:chrome /home/chrome
 
 # Run Chrome non-privileged
-# USER chrome
+## USER chrome
 
 # Expose port 9222
 EXPOSE 9222
